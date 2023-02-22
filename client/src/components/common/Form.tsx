@@ -105,16 +105,16 @@ const Form = ({type, register, handleSubmit, handleImageChange, formLoading, onF
                 </Typography>
                 <Button component='label' sx={{width: 'fit-content', color: '#2ed480', textTransform: 'capitalize', fontSize: 16}}>
                   Upload *
-                </Button>
-                <input 
-                  hidden
-                  accept='image/*'
-                  type='file'
-                  onChange={(e) => {
-                    // @ts-ignore
-                    handleImageChange(e.target.files[0])
-                  }}
+                  <input 
+                    hidden
+                    accept='image/*'
+                    type='file'
+                    onChange={(e) => {
+                      // @ts-ignore
+                      handleImageChange(e.target.files![0])
+                    }}
                 />
+                </Button>
               </Stack>
               <Typography fontSize={14} color='#808191' sx={{wordBreak: 'break-all'}}>
                 {propertyImage?.name}

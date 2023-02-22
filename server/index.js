@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/users', userRouter)
-app.use('/api/v1/property', propertyRouter)
+app.use('/api/v1/properties', propertyRouter)
 
 const startServer = async () => {
   try {
