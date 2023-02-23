@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Refine, AuthProvider } from "@pankod/refine-core";
 import {
   notificationProvider,
@@ -17,7 +15,6 @@ import {
   VillaOutlined
 } from '@mui/icons-material'
 import dataProvider from "@pankod/refine-simple-rest";
-import { MuiInferencer } from "@pankod/refine-inferencer/mui";
 import routerProvider from "@pankod/refine-react-router-v6";
 import axios, { AxiosRequestConfig } from "axios";
 import { ColorModeContextProvider } from "contexts";

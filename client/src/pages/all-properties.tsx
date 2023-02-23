@@ -22,7 +22,8 @@ const AllProperties = () => {
   const currentPrice = sorter.find((item) => item.field === "price")?.order;
 
   const toggleSort = (field: string) => {
-    setSorter([{ field, order: currentPrice === "asc" ? "desc" : "asc" }]);
+    const order = currentPrice === "asc" ? "desc" : "asc"
+    setSorter([{ field, order}]);
   }
 
   const currentFilterValues = useMemo(() => {
