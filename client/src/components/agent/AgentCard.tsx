@@ -4,6 +4,13 @@ import { useGetIdentity } from '@pankod/refine-core'
 import { Box, Stack, Typography } from '@pankod/refine-mui'
 import { Link } from '@pankod/refine-react-router-v6'
 
+const InfoBar = ({icon, name}: InfoBarProps) => (
+  <Stack flex={1} minWidth={{xs: '100%', sm: 300}} gap={1.5} direction='row'>
+    { icon }
+    <Typography fontSize={14} color='#808191'>{name}</Typography>
+  </Stack>
+)
+
 const AgentCard = ({id, name, email, avatar, noOfProperties}: AgentCardProp) => {
   const { data: currentUser } = useGetIdentity()
 
@@ -11,7 +18,7 @@ const AgentCard = ({id, name, email, avatar, noOfProperties}: AgentCardProp) => 
     if (currentUser.email === email)
       return '/my-profile'
     
-    return `/agent/show/${id}`
+    return `/agents/show/${id}`
   }
 
   return (
@@ -42,7 +49,10 @@ const AgentCard = ({id, name, email, avatar, noOfProperties}: AgentCardProp) => 
           <Typography fontSize={14} color='#808191'>Real-Estate Agent</Typography>
         </Stack>
         <Stack direction='row' flexWrap='wrap' justifyContent='space-between' alignItems='center' gap={2}>
-
+          <InfoBar icon={<EmailOutlined sx={{color: '#808191'}}/>} name={email} />
+          <InfoBar icon={<Place sx={{color: '#808191'}}/>} name={'London'} />
+          <InfoBar icon={<Phone sx={{color: '#808191'}}/>} name={'+996707071219'} />
+          <InfoBar icon={<LocationCity sx={{color: '#808191'}}/>} name={`${noOfProperties} Properties`} /> 
         </Stack>
       </Stack>
     </Box>
