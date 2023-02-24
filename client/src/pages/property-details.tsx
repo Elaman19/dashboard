@@ -45,8 +45,7 @@ const PropertyDetails = () => {
             "Are you sure you want to delete this property?",
         );
         if (response) {
-            mutate(
-                {
+            mutate({
                     resource: "properties",
                     id: id as string,
                 },
@@ -54,8 +53,7 @@ const PropertyDetails = () => {
                     onSuccess: () => {
                         navigate("/properties");
                     },
-                },
-            );
+                });
         }
     };
 
